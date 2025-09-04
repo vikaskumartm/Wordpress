@@ -43,3 +43,20 @@ function add_a_class($atts, $item, $args, $depth) {
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_a_class', 10, 4);
+
+
+/* Add in header file for create a menu*/
+ <nav>
+    <?php
+    
+    wp_nav_menu(
+        array(
+            'theme_location' => 'header',
+            'menu' => 'header-menu',
+            'container_class' => 'menu-inner',
+            'before' => '<div class="a-Wrap">',
+            'after' => '</div>',
+        )
+    )
+        ?>
+</nav>
